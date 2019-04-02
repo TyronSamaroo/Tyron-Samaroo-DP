@@ -107,16 +107,18 @@ return  arrayTrials[sheets][floors];
   public static void main(String args[]){
       GlassFalling gf = new GlassFalling();
 
+      // Recursion with 100,3 takes long
       // Do not touch the below lines of code, and make sure
       // in your final turned-in copy, these are the only things printed
       int minTrials1Recur = gf.glassFallingRecur(27,2);
       int minTrials1Bottom = gf.glassFallingBottomUp(27,2);
-     //int minTrials2Memo = gf.glassFallingMemoized(27,2,);
+      int minTrials2Bootm = gf.glassFallingRecur(100,3);
       int minTrials2Bottom = gf.glassFallingBottomUp(100, 3);
 
 
       System.out.println(minTrials1Recur + " " + minTrials1Bottom);
-      //System.out.println(minTrials2Memo + " " + minTrials2Bottom);
+      System.out.println(minTrials2Bottom + " " + minTrials2Bottom);
+      //System.out.println("N/A" + " " + minTrials2Bottom);
 
 
   }

@@ -4,13 +4,65 @@
 public class RodCutting {
 
   // Do not change the parameters!
+    // Folllowed along the textbook way how to do Top-down with memoization. With
+    // memo we are able to store previous subproblems and save on computation time
   public int rodCuttingRecur(int rodLength, int[] lengthPrices) {
-    return 0;
+    int r[] = new int[rodLength +1];
+
+      for (int i = 0; i < r.length; i++) {
+          r[i] = Integer.MIN_VALUE;
+      }
+    return rodCuttingRecurMemo(rodLength,lengthPrices,r);
   }
+
+  public int rodCuttingRecurMemo(int rodLength,int[] lengthPrices,int[] r){
+
+      if(r[rodLength] >= 0)
+          return r[rodLength];
+
+      int q = Integer.MIN_VALUE;
+
+      if(rodLength == 0) {
+          q = 0;
+      }
+      else {
+
+          for (int i = 0; i < rodLength; i++) {
+              q = Math.max(q, lengthPrices[i] + rodCuttingRecurMemo(rodLength - i - 1, lengthPrices, r));
+          }
+      }
+          r[rodLength] = q;
+      return q;
+      }
+
+//    public int rodCuttingRecur(int rodLength, int[] lengthPrices) {
+//        if(rodLength == 0)
+//            return  0;
+//        int q = Integer.MIN_VALUE;
+//
+//        for (int i = 0; i <rodLength; i++) {
+//            q = Math.max(q,lengthPrices[i] + rodCuttingRecur(rodLength-i-1,lengthPrices));
+//
+//        }
+//        return q;
+//    }
+
+  // That is top down implementation
 
   // Do not change the parameters!
   public int rodCuttingBottomUp(int rodLength, int[] lengthPrices) {
-    return 0;
+      int r[] = new int[rodLength+1];
+
+      r[0] = 0;
+
+      for (int i = 1; i <=rodLength; i++) {
+          int q = Integer.MIN_VALUE;
+          for (int j = 0; j < i; j++) {
+              q = Math.max(q, lengthPrices[j] + r[i-j-1]);
+          }
+          r[i] = q;
+      }
+    return r[rodLength];
   }
 
 
