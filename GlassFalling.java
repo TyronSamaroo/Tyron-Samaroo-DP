@@ -114,8 +114,6 @@ public class GlassFalling {
       int minTrials1Bottom = gf.glassFallingBottomUp(27,2);
      // int minTrials2Recur = gf.glassFallingRecur(100,3);
       int minTrials2Bottom = gf.glassFallingBottomUp(100, 3);
-
-
       System.out.println(minTrials1Recur + "   " + minTrials1Bottom);//
      // System.out.println(minTrials2Bottom + " " + minTrials2Bottom);
       System.out.println("N/A" + " " + minTrials2Bottom);
