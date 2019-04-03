@@ -117,7 +117,5 @@ public class GlassFalling {
       System.out.println(minTrials1Recur + "   " + minTrials1Bottom);//
      // System.out.println(minTrials2Bottom + " " + minTrials2Bottom);
       System.out.println("N/A" + " " + minTrials2Bottom);
-
-
   }
 }
