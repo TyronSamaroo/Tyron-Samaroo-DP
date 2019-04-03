@@ -1,6 +1,8 @@
 /**
  * Glass Falling
+ * Author: Tyron Samaroo
  */
+
 public class GlassFalling {
 
   // Do not change the parameters!
